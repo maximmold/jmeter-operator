@@ -199,6 +199,8 @@
           metadata:
             labels:
               app: '{{ meta.name }}-influxdb'
+            annotations:
+              sidecar.istio.io/inject: "false"   
           spec:
             containers:
               - image: "{{influxdb_image}}"
