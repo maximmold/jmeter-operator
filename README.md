@@ -1,5 +1,7 @@
 # Jmeter-operator
 
+**The Disrupt team forked this repo from https://github.com/kubernauts/jmeter-operator.**
+
 This operator was created to simplify the process of deploying a Jmeter cluster on kubernetes.
 
 The operator is capable of creating the following resources:
