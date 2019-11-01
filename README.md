@@ -1,6 +1,19 @@
 # Jmeter-operator
 
+## Disrupt notes
+
 **The Disrupt team forked this repo from https://github.com/kubernauts/jmeter-operator.**
+
+Changes were made to some of the Kubernetes artifacts to support running on a service mesh. This resulted in a new image for the jmeter operator which is currently published on the public Docker hub [here](https://hub.docker.com/r/maximmold/jmeter-operator). This repo is also pulled down as part of the ansible jmeter-operator so that the deployment points to this new image.
+
+It can be rebuilt as follows.
+```
+cd jmeter-operator
+docker build -f build/Dockerfile -t jmeter-operator:v0.0.1 -t jmeter-operator:latest -t maximmold/jmeter-operator:v0.0.1 .
+docker push maximmold/jmeter-operator:v0.0.1
+```
+
+## Original README
 
 This operator was created to simplify the process of deploying a Jmeter cluster on kubernetes.
 
