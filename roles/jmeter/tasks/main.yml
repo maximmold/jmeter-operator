@@ -39,7 +39,7 @@
               jmeter_mode: '{{ meta.name }}-jmeter-master'
           spec:
             nodeSelector:
-              failure-domain.beta.kubernetes.io/zone: "0" 
+              failure-domain.beta.kubernetes.io/zone: "3" 
             containers:
             - name: jmetermaster
               image: "{{jmeter_master_image}}"
@@ -125,7 +125,7 @@
               jmeter_mode: '{{ meta.name }}-slave'  
           spec:
             nodeSelector:
-              failure-domain.beta.kubernetes.io/zone: "0" 
+              failure-domain.beta.kubernetes.io/zone: "3" 
             containers:
             - name: jmslave
               image: "{{jmeter_slave_image}}"
@@ -207,7 +207,7 @@
               sidecar.istio.io/inject: "false"   
           spec:
             nodeSelector:
-              failure-domain.beta.kubernetes.io/zone: "0" 
+              failure-domain.beta.kubernetes.io/zone: "3" 
             containers:
               - image: "{{influxdb_image}}"
                 imagePullPolicy: IfNotPresent
@@ -338,7 +338,7 @@
               jmeter_mode: '{{ meta.name }}-jmeter-reporter'
           spec:
             nodeSelector:
-              failure-domain.beta.kubernetes.io/zone: "0" 
+              failure-domain.beta.kubernetes.io/zone: "3" 
             containers:
             - name: jmreporter
               image: "{{grafana_reporter_image}}"
